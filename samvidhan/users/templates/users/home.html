@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samvidhan-sarthi</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "users/style.css" %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+</head>
+<body>
+    <div id="main">
+        <div data-scroll data-scroll-speed="-5" id="page1">
+            <nav>
+                <div id="right-nav">
+                    <div id="dropdown">
+                        <button class="dropdown-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+                        <div id="dropdown-content">
+                            <a href="#">Option 1</a>
+                            <a href="#">Option 2</a>
+                            <a href="#">Option 3</a>
+                        </div>
+                    </div>
+                    <a href="#" class="link">Contact</a>
+                    <a href="#page3" class="link-2">About Us</a>
+                    <a href="#page1" class="link-3">Home</a>
+                </div>
+                <div id="icon1">
+                </div>
+            </nav>
+            <div id="bottom-page1">
+                <h1>Samvidhan-Sarthi</h1>
+                <div id="bottom-page1-inner">
+                    <h4>Empowering Liberty, Ensuring Justice !!!</h4>
+                    <button onclick="location.href='Samvidhan.html'">LEARN MORE</button>
+                </div>
+            </div>
+        </div>
+        <div id="page2">
+            <div id="content">
+                
+                <div id="quiz">
+                    <h3>Let's Play!</h3>
+                    <button onclick="location.href='index.html'">Start</button>
+                </div>
+               
+            </div>
+        </div>
+        <div id="page3">
+            <footer>
+                <div id="left-footer">
+                    <div id="icon">
+                    </div>
+                    <h5>Samvidhan-Sarthi</h5>
+                </div>
+                <div id="right-footer">
+                    <div id="contact">
+                        <h3>Contacts:</h3>
+                        <h5>Ph: 8697532134</h5>
+                        <h5>Adress: 101-Chaubagha</h5>
+                        <h5>City: Kolkata</h5>
+                    </div>
+                </div>
+            </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src={% static "users/script/script.js" %}></script>
+</body>
+</html>
