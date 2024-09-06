@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz with Reward</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        .reward {
+            font-size: 22px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Quiz: Test Your Knowledge on Judiciary</h2>
+    <form id="quizForm">
+        <div class="question">
+            <p>1. Which of the following statements about the powers of the President of India under the Constitution is incorrect?</p>
+            <input type="radio" name="q15" value="a"> The President can promulgate Ordinances during the recess of Parliament.<br>
+            <input type="radio" name="q15" value="b"> The President can declare a National Emergency on grounds of war, external aggression, or armed rebellion.<br>
+            <input type="radio" name="q15" value="c"> The President can veto a Constitutional Amendment Bill passed by Parliament.<br>
+            <input type="radio" name="q15" value="d"> The President acts on the advice of the Council of Ministers in exercising executive powers.<br>
+        </div>
+    
+        <div class="question">
+            <p>2. In which year was the Indian Judiciary system established under the Constitution of India?</p>
+            <input type="radio" name="q16" value="a"> 1947<br>
+            <input type="radio" name="q16" value="b"> 1950<br>
+            <input type="radio" name="q16" value="c"> 1952<br>
+            <input type="radio" name="q16" value="d"> 1960<br>
+        </div>
+    
+        <div class="question">
+            <p>3. Which Article of the Indian Constitution deals with the appointment of the Chief Justice and other judges of the Supreme Court?</p>
+            <input type="radio" name="q17" value="a"> Article 124<br>
+            <input type="radio" name="q17" value="b"> Article 145<br>
+            <input type="radio" name="q17" value="c"> Article 148<br>
+            <input type="radio" name="q17" value="d"> Article 226<br>
+        </div>
+    
+        <div class="question">
+            <p>4. In the context of judicial functions, what is the primary role of a 'writ of habeas corpus'?</p>
+            <input type="radio" name="q18" value="a"> To enforce personal rights against the state<br>
+            <input type="radio" name="q18" value="b"> To prevent the government from making illegal decisions<br>
+            <input type="radio" name="q18" value="c"> To demand the release of a person unlawfully detained<br>
+            <input type="radio" name="q18" value="d"> To challenge the constitutionality of laws<br>
+        </div>
+    
+        <div class="question">
+            <p>5. Which doctrine, established in the case of Kesavananda Bharati v. State of Kerala, states that Parliament cannot alter the basic structure of the Constitution?</p>
+            <input type="radio" name="q19" value="a"> Doctrine of Basic Structure<br>
+            <input type="radio" name="q19" value="b"> Doctrine of Separation of Powers<br>
+            <input type="radio" name="q19" value="c"> Doctrine of Judicial Review<br>
+            <input type="radio" name="q19" value="d"> Doctrine of Constitutional Supremacy<br>
+        </div>
+    </div>
+        <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+    </form>
+
+    <div id="result" class="result"></div>
+</div>
+
+<script>
+    function submitQuiz() {
+        var score = 0;
+        
+        var answers = {
+            q1: "a",
+            q2: "b",
+            q3: "a",
+            q4: "c",
+            q5: "a"
+        };
+
+        for (var question in answers) {
+            var radios = document.getElementsByName(question);
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked && radios[i].value === answers[question]) {
+                    score++;
+                    break;
+                }
+            }
+        }
+
+        var resultDiv = document.getElementById('result');
+        var reward = "";
+        if (score === 5) {
+            reward = "🏆 You're a Quiz Master! Congratulations!";
+        } else if (score >= 3) {
+            reward = "🎉 Good job! Keep learning.";
+        } else {
+            reward = "😕 Better luck next time. Try again!";
+        }
+
+        resultDiv.innerHTML = "You scored " + score + " out of 5.<br>" + "<span class='reward'>" + reward + "</span>";
+    }
+</script>
+
+</body>
+</html>

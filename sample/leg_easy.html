@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz with Reward</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        .reward {
+            font-size: 22px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Quiz: Test Your Knowledge on Legislature</h2>
+    <form id="quizForm">
+        <div class="question">
+            <p>1. Which of the following is a primary function of Legislature?</p>
+            <input type="radio" name="q1" value="a"> Interpret laws<br>
+            <input type="radio" name="q1" value="b"> Enforce laws<br>
+            <input type="radio" name="q1" value="c"> Make laws<br>
+            <input type="radio" name="q1" value="d"> Manage public Services<br>
+        </div>
+
+        <div class="question">
+            <p>2. Which part of the government is responsible for enforcing laws?</p>
+            <input type="radio" name="q2" value="a"> Legislature<br>
+            <input type="radio" name="q2" value="b"> Judiciary<br>
+            <input type="radio" name="q2" value="c"> Executive<br>
+            <input type="radio" name="q2" value="d"> Election Commision<br>
+        </div>
+
+        <div class="question">
+            <p>3. The executive power in India is vested in the ____________.</p>
+            <input type="radio" name="q3" value="a"> Governer<br>
+            <input type="radio" name="q3" value="b"> Prime Minister<br>
+            <input type="radio" name="q3" value="c"> President<br>
+            <input type="radio" name="q3" value="d"> Parliament<br>
+        </div>
+
+        <div class="question">
+            <p>4. Who is the head of the Executive at the state level in India?</p>
+            <input type="radio" name="q4" value="a"> Chief Minister<br>
+            <input type="radio" name="q4" value="b"> President<br>
+            <input type="radio" name="q4" value="c"> Prime Minister<br>
+            <input type="radio" name="q4" value="d"> Governer<br>
+        </div>
+
+        <div class="question">
+            <p> 5. Which of the following is NOT a power of the Legislature?</p>
+            <input type="radio" name="q5" value="a"> Making laws<br>
+            <input type="radio" name="q5" value="b"> Controlling the budget<br>
+            <input type="radio" name="q5" value="c"> Resolving court disputes<br>
+            <input type="radio" name="q5" value="d"> Amending the Constitution<br>
+        </div>
+
+        <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+    </form>
+
+    <div id="result" class="result"></div>
+</div>
+
+<script>
+    function submitQuiz() {
+        var score = 0;
+        
+        var answers = {
+            q1: "c",
+            q2: "c",
+            q3: "d",
+            q4: "b",
+            q5: "c"
+        };
+
+        for (var question in answers) {
+            var radios = document.getElementsByName(question);
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked && radios[i].value === answers[question]) {
+                    score++;
+                    break;
+                }
+            }
+        }
+
+        var resultDiv = document.getElementById('result');
+        var reward = "";
+        if (score === 5) {
+            reward = "🏆 You're a Quiz Master! Congratulations!";
+        } else if (score >= 3) {
+            reward = "🎉 Good job! Keep learning.";
+        } else {
+            reward = "😕 Better luck next time. Try again!";
+        }
+
+        resultDiv.innerHTML = "You scored " + score + " out of 5.<br>" + "<span class='reward'>" + reward + "</span>";
+    }
+</script>
+
+</body>
+</html>
+

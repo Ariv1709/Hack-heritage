@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz with Reward</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        .reward {
+            font-size: 22px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Quiz: Test Your Knowledge on Judiciary</h2>
+    <form id="quizForm">
+        <div class="question">
+            <p>1. Which of the following is the highest court in India?</p>
+            <input type="radio" name="q1" value="a"> High Court<br>
+            <input type="radio" name="q1" value="b"> District Court<br>
+            <input type="radio" name="q1" value="c"> Supreme Court<br>
+            <input type="radio" name="q1" value="d"> Magistrate Court<br>
+        </div>
+
+        <div class="question">
+            <p>2. The primary function of the Judiciary is to:</p>
+            <input type="radio" name="q2" value="a"> Make laws<br>
+            <input type="radio" name="q2" value="b"> Enforce laws<br>
+            <input type="radio" name="q2" value="c"> Interpret laws<br>
+            <input type="radio" name="q2" value="d"> Amend the Constitution<br>
+        </div>
+
+        <div class="question">
+            <p>3. Which of these principles ensures that no one is above the law?</p>
+            <input type="radio" name="q3" value="a"> Judicial Review<br>
+            <input type="radio" name="q3" value="b"> Rule of Law<br>
+            <input type="radio" name="q3" value="c"> Judicial Activism<br>
+            <input type="radio" name="q3" value="d"> Separation of Powers<br>
+        </div>
+
+        <div class="question">
+            <p>4. Which article of the Indian Constitution allows citizens to move the Supreme Court directly in case of violation of fundamental rights?</p>
+            <input type="radio" name="q4" value="a"> Article 21<br>
+            <input type="radio" name="q4" value="b"> Article 32<br>
+            <input type="radio" name="q4" value="c"> Article 51<br>
+            <input type="radio" name="q4" value="d"> Article 356<br>
+        </div>
+
+        <div class="question">
+            <p>5. Judges in the Supreme Court of India are appointed by whom?</p>
+            <input type="radio" name="q5" value="a"> Prime Minister<br>
+            <input type="radio" name="q5" value="b"> Parliament<br>
+            <input type="radio" name="q5" value="c"> President<br>
+            <input type="radio" name="q5" value="d"> Chief Justice of India<br>
+        </div>
+        <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+    </form>
+
+    <div id="result" class="result"></div>
+</div>
+
+<script>
+    function submitQuiz() {
+        var score = 0;
+        
+        var answers = {
+            q1: "a",
+            q2: "b",
+            q3: "a",
+            q4: "c",
+            q5: "a"
+        };
+
+        for (var question in answers) {
+            var radios = document.getElementsByName(question);
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked && radios[i].value === answers[question]) {
+                    score++;
+                    break;
+                }
+            }
+        }
+
+        var resultDiv = document.getElementById('result');
+        var reward = "";
+        if (score === 5) {
+            reward = "🏆 You're a Quiz Master! Congratulations!";
+        } else if (score >= 3) {
+            reward = "🎉 Good job! Keep learning.";
+        } else {
+            reward = "😕 Better luck next time. Try again!";
+        }
+
+        resultDiv.innerHTML = "You scored " + score + " out of 5.<br>" + "<span class='reward'>" + reward + "</span>";
+    }
+</script>
+
+</body>
+</html>

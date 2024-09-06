@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz with Reward</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        .reward {
+            font-size: 22px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Quiz: Test Your Knowledge on Executive</h2>
+    <form id="quizForm">
+        <div class="question">
+            <p>1. Which of the following is NOT a power or function of the Executive branch of the government in a parliamentary democracy?</p>
+        <input type="radio" name="q10" value="a"> Enforcing laws<br>
+        <input type="radio" name="q10" value="b"> Drafting legislation<br>
+        <input type="radio" name="q10" value="c"> Conducting foreign affairs<br>
+        <input type="radio" name="q10" value="d"> Appointing judges<br>
+    </div>
+
+    <div class="question">
+        <p>2. In the context of the Indian Constitution, which of the following statements accurately describes the role of the President in relation to the Executive branch?</p>
+        <input type="radio" name="q11" value="a"> The President has the power to unilaterally dissolve the Lok Sabha.<br>
+        <input type="radio" name="q11" value="b"> The President can appoint the Prime Minister without regard to the majority party.<br>
+        <input type="radio" name="q11" value="c"> The President's actions are subject to the advice of the Council of Ministers.<br>
+        <input type="radio" name="q11" value="d"> The President serves as the head of the executive and legislative branches simultaneously.<br>
+    </div>
+
+    <div class="question">
+        <p>3. Which of the following is a power exclusive to the Prime Minister of India and NOT shared with the President?</p>
+        <input type="radio" name="q12" value="a"> Appointing the Chief Justice of India<br>
+        <input type="radio" name="q12" value="b"> Deciding the allocation of portfolios among ministers<br>
+        <input type="radio" name="q12" value="c"> Appointing the Governor of a state<br>
+        <input type="radio" name="q12" value="d"> Issuing ordinances when Parliament is not in session<br>
+    </div>
+
+    <div class="question">
+        <p>4. Which body or individual has the authority to appoint the Chief Minister of an Indian state?</p>
+        <input type="radio" name="q13" value="a"> The Governor of the state<br>
+        <input type="radio" name="q13" value="b"> The President of India<br>
+        <input type="radio" name="q13" value="c"> The Prime Minister of India<br>
+        <input type="radio" name="q13" value="d"> The Speaker of the Legislative Assembly<br>
+    </div>
+
+    <div class="question">
+        <p>5. In the event of a no-confidence motion against the Prime Minister of India, what is the immediate constitutional consequence?</p>
+        <input type="radio" name="q14" value="a"> The President must immediately dissolve the Lok Sabha.<br>
+        <input type="radio" name="q14" value="b"> The Prime Minister must resign, and a new Prime Minister must be appointed.<br>
+        <input type="radio" name="q14" value="c"> The President appoints a new Prime Minister without dissolving the Lok Sabha.<br>
+
+        <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+    </form>
+
+    <div id="result" class="result"></div>
+</div>
+
+<script>
+    function submitQuiz() {
+        var score = 0;
+        
+        var answers = {
+            q1: "b",
+            q2: "c",
+            q3: "b",
+            q4: "a",
+            q5: "b"
+        };
+
+        for (var question in answers) {
+            var radios = document.getElementsByName(question);
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked && radios[i].value === answers[question]) {
+                    score++;
+                    break;
+                }
+            }
+        }
+
+        var resultDiv = document.getElementById('result');
+        var reward = "";
+        if (score === 5) {
+            reward = "🏆 You're a Quiz Master! Congratulations!";
+        } else if (score >= 3) {
+            reward = "🎉 Good job! Keep learning.";
+        } else {
+            reward = "😕 Better luck next time. Try again!";
+        }
+
+        resultDiv.innerHTML = "You scored " + score + " out of 5.<br>" + "<span class='reward'>" + reward + "</span>";
+    }
+</script>
+
+</body>
+</html>
