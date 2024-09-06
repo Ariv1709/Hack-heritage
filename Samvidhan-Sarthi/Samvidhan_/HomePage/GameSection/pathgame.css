@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #2e2e2e;
+    color: #e0e0e0;
+}
+
+header {
+    background-color: #1c1c1c;
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* Center align header content */
+    align-items: center;
+}
+
+header .logo {
+    font-size: 36px; /* Larger font size */
+    font-weight: bold;
+    color: #f0f0f0;
+    font-family: 'Times New Roman', serif; /* Times New Roman font */
+}
+
+main {
+    padding: 40px 20px;
+}
+
+.path-map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.level-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 buttons per row */
+    gap: 20px; /* Space between levels */
+    width: 80%;
+    max-width: 1200px; /* Ensure it fits well */
+    margin: 0 auto;
+    position: relative;
+    border: 2px solid #58cc02; /* Outline box */
+    padding: 20px;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+}
+
+.level {
+    width: 100%;
+    height: 100px;
+    background-color: #34495e;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ecf0f1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+    position: relative; /* For positioning lines and arrows */
+    z-index: 1; /* Ensure levels are above lines and arrows */
+}
+
+.level:hover {
+    transform: scale(1.1);
+    background-color: #58cc02;
+    color: #fff;
+}
+
+.connection {
+    position: absolute;
+    border-top: 2px dotted #58cc02;
+    pointer-events: none; /* Ensure it does not block clicks */
+    transform-origin: top left;
+    z-index: 0; /* Ensure connections are below levels */
+}
+
+.arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #58cc02;
+    transform: translateX(-50%);
+    z-index: 0; /* Ensure arrows are below levels */
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #1c1c1c;
+    color: #e0e0e0;
+    margin-top: 50px;
+}

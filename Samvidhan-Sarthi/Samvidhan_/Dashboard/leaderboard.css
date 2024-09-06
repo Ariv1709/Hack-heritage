@@ -1,0 +1,89 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1c1c1c; /* Dark background */
+    margin: 0;
+    padding: 0;
+}
+
+/* Container for the Leaderboard */
+.leaderboard-container {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #4b2c20 0%, #000000 100%); /* Brown to black gradient */
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Header for the Leaderboard */
+h1 {
+    font-size: 36px;
+    color: #fff; /* White text */
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Darker shadow for depth */
+}
+
+/* List of leaderboard items */
+.leaderboard-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Individual leaderboard items */
+.leaderboard-item {
+    display: flex;
+    align-items: center;
+    background-color: #333; /* Dark gray background for items */
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Stronger shadow for darker theme */
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+/* Hover effect for leaderboard items */
+.leaderboard-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7); /* Enhanced shadow on hover */
+}
+
+/* Rank circle */
+.leaderboard-rank {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #6e4f2c 0%, #1c1c1c 100%); /* Darker brown to black gradient */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff; /* White text */
+    margin-right: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Details for the leaderboard items */
+.leaderboard-details {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Player name */
+.leaderboard-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffa726; /* Orange text for player names */
+}
+
+/* Player score */
+.leaderboard-score {
+    font-size: 18px;
+    color: #bbb; /* Light gray text for scores */
+    font-weight: bold;
+}

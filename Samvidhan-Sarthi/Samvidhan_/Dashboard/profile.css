@@ -1,0 +1,71 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1c1c1c; /* Dark background */
+    margin: 0;
+    padding: 0;
+}
+
+/* Container for the Profile */
+.profile-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #4b2c20 0%, #000000 100%); /* Brown to black gradient */
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Profile Header */
+.profile-header {
+    margin-bottom: 30px;
+}
+
+/* Profile Avatar */
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid #ffa726; /* Orange border around avatar */
+    margin-bottom: 15px;
+}
+
+/* Profile Name */
+.profile-name {
+    font-size: 28px;
+    color: #ffa726; /* Orange text */
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Profile Details Section */
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Profile Items */
+.profile-item {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333; /* Dark gray background for items */
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Stronger shadow for darker theme */
+}
+
+/* Profile Labels */
+.profile-label {
+    font-size: 18px;
+    color: #bbb; /* Light gray text */
+    font-weight: bold;
+}
+
+/* Profile Values */
+.profile-value {
+    font-size: 18px;
+    color: #fff; /* White text */
+    font-weight: bold;
+}

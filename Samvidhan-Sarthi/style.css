@@ -1,0 +1,616 @@
+#container {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+#sidebar{
+  width: 170px;
+  background-color: #7b845e;
+  color: #fff;
+  position: fixed;
+  justify-items: center;
+  align-self: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.8);
+}
+
+#sidebar>h5{
+  margin-left: 60px;
+
+}
+
+#logo{
+  height: 50px;
+  width: 50px;
+  margin-left: 60px;
+  margin-bottom: 20px;
+
+}
+
+#logo>img{
+  height: 50px;
+  width: 50px;
+}
+
+#sidebar>button{
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  border: blue;
+  margin-left: 35px;
+  background-image: url(assets/download.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+#level{
+  display: flex;
+  gap: 10px;
+}
+
+.progress-container {
+    width: 110px;
+    background-color: #e0e0e0;
+    border-radius: 50px;
+    padding: 3px;
+    margin: 20px 0;
+    margin-left: 0px;
+}
+
+.progress-bar {
+    height: 15px;
+    width: 0;
+    background-color: #4caf50;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+    justify-items: center;
+}
+
+#sidebar ul li {
+    margin: 15px 0;
+    display: flex;
+}
+
+#sidebar ul li img{
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+#sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#trophy{
+  margin-left: -5px;
+}
+#sidebar ul li:hover {
+    background-color: #575757;
+    border-radius: 50px;
+    margin-left: 20px;
+}
+
+#main{
+  display: block;
+  width: 100%;
+}
+
+#main-1{
+    margin-left: 200px;
+    width: calc(100% - 200px);
+    overflow-y: auto;
+    height: 63vh;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background-image: url(assets/Untitled\ design\ \(2\).png);
+    background-size: cover;
+    background-position: center;
+}
+
+#main-1>h3{
+    margin-left: 30px;
+    color: rgb(0, 0, 0);
+}
+
+#top-page{
+    margin-left: 25px;
+    width: 95%;
+    height: 50vh;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#left{
+    background-color: #C3FFA6;
+    background: linear-gradient(307deg, white,#fcbe72);
+    margin-left: 0px;
+    width: 57%;
+    height: 50vh;
+    border-radius: 50px;
+    display: flex;
+    gap: 40px;
+}
+
+#right{
+  background: linear-gradient(45deg,  white,#fcbe72);
+    margin-left: 0px;
+    width: 40%;
+    height: 50vh;
+    border-radius: 50px;
+    display:inline;
+    justify-content: center;
+    
+}
+#right>h3{
+  color: rgb(0, 0, 0);
+}
+
+
+
+.pie-chart {
+    position: relative;
+    margin-top: 50px;
+    margin-left: 30px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: conic-gradient(#512828 0% 50%, #ccc 50% 100%);
+}
+
+  /* Create hollow effect using pseudo-element */
+.pie-chart::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px; /* Inner circle width */
+    height: 120px; /* Inner circle height */
+    background-color: white;
+    border-radius: 50%;
+}
+
+  /* Text to show the percentage */
+.percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: #4c60af;
+}
+
+#left-2{
+    background-color: rgb(255, 255, 255);
+    height: 80%;
+    width: 48%;
+    margin-top: 30px;
+    border-radius: 50px;
+}
+
+#l2p1{
+    display: flex;
+    gap: 100px;
+    padding: 10px 10px 10px 10px;
+   
+}
+
+#l2p1>button{
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
+
+#l2p2{
+    display: flex;
+    gap: 100px;
+    padding: 10px 10px 10px 10px;
+    
+
+}
+
+#l2p2>button{
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  justify-content: center;
+}
+
+
+#l2p1>button>img{
+  width: 50px;
+  height: 50px;
+}
+
+#l2p1>button>h4{
+  margin-top: 0px;
+
+}
+
+#l2p1>button>.Games{
+  margin-top: -10px;
+}
+
+
+
+#l2p2>button>img{
+  width: 50px;
+  height: 50px;
+}
+
+#l2p2>button>h4{
+  margin-top: -4px;
+  margin-left: 5px;
+}
+
+#button-family{
+    display:block;
+    justify-content: center;
+}
+
+#button-family>button{
+    display: flex;
+    justify-content: space-between;
+    justify-self: center;
+    height: 40px;
+    width: 90%;
+    margin-top: 8px;
+    margin-left: 20px;
+    padding-top: -30px;
+    border-radius: 50px;
+}
+
+#right>h3{
+    margin-left: 165px;
+}
+
+#num{
+    margin-top: -8px;
+}
+
+#name{
+    margin-top: -8px;
+}
+
+#score{
+    margin-top: -8px;
+}
+
+#main-2{
+  margin-left: 200px;
+  width: calc(100% - 200px);
+  overflow-y: auto;
+    height: 32vh;
+    box-sizing: border-box;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .dropdown-container {
+    position: relative;
+    width: 350px;
+  }
+  
+  #dropdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #b39121;
+    border: 1px solid #fcfcfc;
+    cursor: pointer;
+    margin-top: 9px;
+    margin-left: 20px;
+    border-radius: 50px;
+  }
+  
+  .arrow {
+    font-size: 20px;
+    color: #555;
+}
+  
+  .dropdownMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin-left: 15px;
+    padding: 0;
+    list-style: none;
+    background-color: #186b7b;
+    border: 1px solid #ccc;
+    border-top: none;
+    display: none;
+}
+  
+  .dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #e0e0e0;
+    border-radius: 50px;
+}
+  
+  .dropdown-item:hover {
+    background-color: #a9d01e;
+}
+
+.search-container {
+  display: flex;
+  width: 400px;
+}
+
+.search-input {
+  width: 100%;
+  height: 15px;
+  border-radius: 50px;
+  margin-top: 9px;
+  margin-right: 15px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  border-radius: 50px;
+}
+
+.search-input:focus {
+  border-color: #5fa3f2;
+}
+
+.search-button {
+  padding: 10px 15px;
+  background-image: url(assets/search.svg);
+  width: 40px;
+  height: 40px;
+  margin-top: 9px;
+  border-radius: 50px;
+  margin-right: 15px;
+  margin-left: -5px;
+  font-size: 16px;
+  background-color: #5fa3f2;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #4285f4;
+}
+
+#main-3{
+  margin-left: 200px;
+  width: calc(100% - 200px);
+  overflow-y: auto;
+  height: 100vh;
+  box-sizing: border-box;
+  border-radius: 20px;
+  display: block;
+  background-size: cover;
+  background-position: center;
+  
+}
+
+#row-1{
+  height: 40%;
+  width: 1007px;
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  gap: 10px;
+  padding: 20px 20px;
+  border-radius: 20px;
+  background-color: #fcbe72;
+
+  
+}
+
+
+#task{
+  background-color: #e2975a;
+  width: 17%;
+  height: 220px;
+  display: block;
+  justify-items: center;
+  gap: 18px;
+  border-radius: 20px;
+}
+
+#task>img{
+  width: 100px;
+  height: 100px;
+  margin-left: 15px;
+  padding: 20px 20px;
+}
+
+#task>h3{
+  margin-left: 60px;
+  margin-top: -15px;
+}
+
+#task>button{
+  width: 70px;
+  height: 40px;
+  border-radius: 50px;
+  margin-left: 50px;
+  margin-top: 6px;
+  align-self: center;
+  transition: 0.8s;
+  border: none;
+}
+
+#task>button:hover{
+  background-color: #ccd224;
+}
+
+#journey{
+  background-color: #e2975a;
+  width: 17%;
+  height: 220px;
+  display: block;
+  justify-items: center;
+  gap: 18px;
+  border-radius: 20px;
+}
+
+#journey>img{
+  width: 100px;
+  height: 100px;
+  margin-left: 15px;
+  padding: 20px 20px;
+}
+
+#journey>h3{
+  margin-left: 35px;
+  margin-top: -15px;
+}
+
+#journey>button{
+  width: 70px;
+  height: 40px;
+  border-radius: 50px;
+  margin-left: 50px;
+  margin-top: 6px;
+  align-self: center;
+  transition: 0.8s;
+  border: none;
+}
+
+#journey>button:hover{
+  background-color: #ccd224;
+}
+
+#qtm-challenge{
+  background-color: #e2975a;
+  width: 17%;
+  height: 220px;
+  display: block;
+  justify-items: center;
+  gap: 18px;
+  border-radius: 20px;
+}
+
+#qtm-challenge>img{
+  width: 100px;
+  height: 100px;
+  margin-left: 15px;
+  padding: 20px 20px;
+}
+
+#qtm-challenge>h3{
+  margin-left: 45px;
+  margin-top: -15px;
+}
+
+#qtm-challenge>button{
+  width: 70px;
+  height: 40px;
+  border-radius: 50px;
+  margin-left: 50px;
+  margin-top: 6px;
+  align-self: center;
+  transition: 0.8s;
+  border: none;
+}
+
+#qtm-challenge>button:hover{
+  background-color: #ccd224;
+}
+
+#qtm-team{
+  background-color: #e2975a;
+  width: 17%;
+  height: 220px;
+  display: block;
+  justify-items: center;
+  gap: 18px;
+  border-radius: 20px;
+}
+
+#qtm-team>img{
+  width: 100px;
+  height: 100px;
+  margin-left: 15px;
+  padding: 20px 20px;
+}
+
+#qtm-team>h3{
+  margin-left: 40px;
+  margin-top: -15px;
+}
+
+#qtm-team>button{
+  width: 70px;
+  height: 40px;
+  border-radius: 50px;
+  margin-left: 50px;
+  margin-top: 6px;
+  align-self: center;
+  transition: 0.8s;
+  border: none;
+}
+
+#qtm-team>button:hover{
+  background-color: #ccd224;
+}
+
+#forum{
+  background-color: #e2975a;
+  width: 17%;
+  height: 220px;
+  display: block;
+  justify-items: center;
+  gap: 18px;
+  border-radius: 20px;
+}
+
+#forum>img{
+  width: 100px;
+  height: 100px;
+  margin-left: 15px;
+  padding: 20px 20px;
+}
+
+#forum>h3{
+  align-items: center;
+  margin-left: 40px;
+  margin-top: -20px;
+}
+
+#forum>button{
+  width: 70px;
+  height: 40px;
+  border-radius: 50px;
+  margin-left: 50px;
+  margin-top: -60px;
+  align-self: center;
+  transition: 0.8s;
+  border: none;
+}
+
+#forum>button:hover{
+  background-color: #ccd224;
+}
+
+
+
+
+  
