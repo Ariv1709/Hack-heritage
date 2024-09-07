@@ -1,0 +1,98 @@
+/* General Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #3a3a3a, #000000, #d4af37, #ffffff);
+    color: #fff;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-bottom: 3px solid #d4af37;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    color: #d4af37;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+/* Section Styling */
+main {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+    flex-wrap: wrap;
+}
+
+.section {
+    width: 45%;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid #d4af37;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.section h2 {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.section p {
+    font-size: 1.2em;
+    line-height: 1.6em;
+}
+
+/* Button Styling */
+.learn-button {
+    background-color: #d4af37;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.learn-button:hover {
+    background-color: #f0c14b;
+    transform: scale(1.1);
+}
+
+/* Keyframe Animations */
+@keyframes hoverGlow {
+    0% {
+        text-shadow: 0 0 5px #d4af37;
+    }
+    50% {
+        text-shadow: 0 0 20px #d4af37;
+    }
+    100% {
+        text-shadow: 0 0 5px #d4af37;
+    }
+}
+
+.section:hover h2 {
+    animation: hoverGlow 1.5s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section {
+        width: 80%;
+    }
+}
