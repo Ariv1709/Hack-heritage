@@ -1,0 +1,89 @@
+body {
+    font-family: 'Lora', serif; /* Updated font for a more elegant look */
+    background: linear-gradient(to right, #42210b, #000000); /* Rich gradient */
+    color: #e0d6cc;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(to right, #543927, #2c2c2c); /* Subtle header gradient */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Header shadow */
+}
+
+h1 {
+    color: #f5c378;
+    font-size: 2.5em; /* Larger font */
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.7); /* Slight background overlay */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Main container shadow */
+}
+
+.chapter {
+    margin-bottom: 20px;
+}
+
+.dropdown-button {
+    background-color: #705537; /* Refined brown color */
+    color: #e9decf; /* Lighter text */
+    border: none;
+    padding: 20px;
+    font-size: 18px;
+    text-align: left;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 8px; /* Smooth rounded buttons */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Button shadow */
+}
+
+.dropdown-button:hover {
+    background-color: #d4af37; /* Updated hover color */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5); /* Deeper shadow on hover */
+    transform: translateY(-2px); /* Slight uplift effect */
+}
+
+.dropdown-content {
+    display: none;
+    padding: 15px;
+    background-color: #3c2a1a; /* Darker background for content */
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Content shadow */
+    margin-top: 10px;
+}
+
+.dropdown-content p {
+    margin: 10px 0;
+    line-height: 1.6; /* Better readability */
+}
+
+.dropdown-content h3 {
+    margin: 0;
+    color: #d4af37; /* Gold heading */
+}
+
+/* Additional animations for content reveal */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-content.show {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}

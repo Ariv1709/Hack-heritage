@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Indian Constitution</title>
+    {% load static %}6
+    <link rel="stylesheet" href={% static "users/learn.css" %}>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+</head>
+<body>
+    <header>
+        <h1>Let's Learn in a Simple Way...</h1>
+    </header>
+
+    <main>
+        <div class="section" id="union">
+            <h2>Part V: The Union</h2>
+            <p>Explore the structure, powers, and functions of the Union government of India.</p>
+            <button class="learn-button" onclick= "window.location.href='{% url 'union' %}'">Learn More</button>
+        </div>
+        <div class="section" id="states">
+            <h2>Part VI: The States</h2>
+            <p>Learn about the government structure and functions at the state level in India.</p>
+            <button class="learn-button" onclick= "window.location.href='{% url 'state' %}'">Learn More</button>
+        </div>
+    </main>
+
+    <script src="learn.js"></script>
+</body>
+</html>

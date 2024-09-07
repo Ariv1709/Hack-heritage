@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>Dashboard with Slideshow and Tile Buttons</title>
+    <link rel="stylesheet" href={% static "users/stylo.css" %}>
+</head>
+<body>
+    
+    <div class="container">
+        <!-- Sidebar (Dashboard) -->
+        <div class="sidebar">
+            <h2>Dashboard</h2>
+            <ul>
+                <li><a href="#">Dashboard Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content">
+            <!-- Slideshow Section -->
+            <div class="slideshow">
+                <p id="slideshow-text"></p>
+            </div>
+
+            <!-- Tiles Section (lower) -->
+            <div class="tiles">
+                <div class="tile" onclick="window.location.href={% url "learn" %};">
+                    <span>LEARN!!</span>
+                </div>
+                <div class="tile" onclick="window.location.href={% url "case" %};">
+                    <span>CASE STUDY</span>
+                </div>
+                <div class="tile" onclick="window.location.href='https://example3.com';">
+                    <span>ConQuest</span>
+                </div>
+                <div class="tile" onclick="window.location.href='https://example4.com';">
+                    <span>FLASHCARDS</span>
+                </div>
+                <div class="tile" onclick="window.location.href='https://example4.com';">
+                    <span>CROSSWORDS</span>
+                </div>
+                <div class="tile" onclick="window.location.href='https://example4.com';">
+                    <span>FORUMS</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Slideshow -->
+    <script src={% static "users/script/script1.js" %}></script>
+</body>
+</html>
