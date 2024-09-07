@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz with Reward</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Quiz: Test Your Knowledge on Executive</h2>
+    <form id="quizForm">
+        <div class="question">
+            <p>1. Who is the head of the Executive branch in India?</p>
+            <input type="radio" name="q1" value="a"> Chief Justice<br>
+            <input type="radio" name="q1" value="b"> President<br>
+            <input type="radio" name="q1" value="c"> Prime Minister<br>
+            <input type="radio" name="q1" value="d"> Speaker<br>
+        </div>
+
+        <div class="question">
+            <p>2. Which part of the government is responsible for enforcing laws? </p>
+            <input type="radio" name="q2" value="a"> Legislature<br>
+            <input type="radio" name="q2" value="b"> Judiciary<br>
+            <input type="radio" name="q2" value="c"> Executive<br>
+            <input type="radio" name="q2" value="d"> Election Commission<br>
+        </div>
+
+        <div class="question">
+            <p>3. The executive power in India is vested in the ____________.</p>
+            <input type="radio" name="q3" value="a"> Governor<br>
+            <input type="radio" name="q3" value="b"> Prime Minister<br>
+            <input type="radio" name="q3" value="c"> President<br>
+            <input type="radio" name="q3" value="d"> Parliament<br>
+        </div>
+
+        <div class="question">
+            <p>4. Who is the head of the Executive at the state level in India?</p>
+            <input type="radio" name="q4" value="a"> Chief Minister<br>
+            <input type="radio" name="q4" value="b"> President<br>
+            <input type="radio" name="q4" value="c"> Prime Minister<br>
+            <input type="radio" name="q4" value="d"> Governor<br>
+        </div>
+
+        <div class="question">
+            <p>5. In a parliamentary system, who leads the Executive branch of the government?</p>
+            <input type="radio" name="q5" value="a"> President<br>
+            <input type="radio" name="q5" value="b"> Chief Justice<br>
+            <input type="radio" name="q5" value="c"> Prime Minister<br>
+            <input type="radio" name="q5" value="d"> Chief Minister<br>
+        </div>
+
+        <button type="button" id="submitBtn">Submit Quiz</button>
+    </form>
+
+    <div id="result" class="result"></div>
+</div>
+<script src="quizLogic.js"></script>
+</body>
+</html>

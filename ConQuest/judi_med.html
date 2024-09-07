@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz with Reward</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        .reward {
+            font-size: 22px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Quiz: Test Your Knowledge on Legislature</h2>
+    <form id="quizForm">
+        <div class="question">
+            <p>1. Which article of the Indian Constitution establishes the Supreme Court of India?</p>
+            <input type="radio" name="q6" value="a"> Article 124<br>
+            <input type="radio" name="q6" value="b"> Article 136<br>
+            <input type="radio" name="q6" value="c"> Article 143<br>
+            <input type="radio" name="q6" value="d"> Article 226<br>
+        </div>
+
+        <div class="question">
+            <p>2. Which of the following is NOT a ground for the removal of a Supreme Court judge in India?</p>
+            <input type="radio" name="q7" value="a"> Misbehavior<br>
+            <input type="radio" name="q7" value="b"> Incapacity<br>
+            <input type="radio" name="q7" value="c"> Financial mismanagement<br>
+            <input type="radio" name="q7" value="d"> Violation of the Constitution<br>
+        </div>
+
+        <div class="question">
+            <p>3. Who has the final authority to interpret the Constitution of India?</p>
+            <input type="radio" name="q8" value="a"> The Parliament<br>
+            <input type="radio" name="q8" value="b"> The President<br>
+            <input type="radio" name="q8" value="c"> The Supreme Court<br>
+            <input type="radio" name="q8" value="d"> The Law Commission<br>
+        </div>
+
+        <div class="question">
+            <p>4. The principle of Judicial Review in India is derived from which country’s constitution?</p>
+            <input type="radio" name="q9" value="a"> United Kingdom<br>
+            <input type="radio" name="q9" value="b"> United States of America<br>
+            <input type="radio" name="q9" value="c"> Australia<br>
+            <input type="radio" name="q9" value="d"> Canada<br>
+        </div>
+
+        <div class="question">
+            <p>5. Which of the following is true about the Advisory Jurisdiction of the Supreme Court?</p>
+            <input type="radio" name="q10" value="a"> The President can seek advice from the Supreme Court on any law<br>
+            <input type="radio" name="q10" value="b"> The Supreme Court's advice is binding on the President<br>
+            <input type="radio" name="q10" value="c"> The President can seek advice on matters of public importance<br>
+            <input type="radio" name="q10" value="d"> The Supreme Court can refuse to provide advice<br>
+        </div>
+
+         
+
+        <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+    </form>
+
+    <div id="result" class="result"></div>
+</div>
+
+<script>
+    function submitQuiz() {
+        var score = 0;
+        
+        var answers = {
+            q1: "a",
+            q2: "c",
+            q3: "c",
+            q4: "b",
+            q5: "c"
+        };
+
+        for (var question in answers) {
+            var radios = document.getElementsByName(question);
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked && radios[i].value === answers[question]) {
+                    score++;
+                    break;
+                }
+            }
+        }
+
+        var resultDiv = document.getElementById('result');
+        var reward = "";
+        if (score === 5) {
+            reward = "🏆 You're a Quiz Master! Congratulations!";
+        } else if (score >= 3) {
+            reward = "🎉 Good job! Keep learning.";
+        } else {
+            reward = "😕 Better luck next time. Try again!";
+        }
+
+        resultDiv.innerHTML = "You scored " + score + " out of 5.<br>" + "<span class='reward'>" + reward + "</span>";
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz with Reward</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        .reward {
+            font-size: 22px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Quiz: Test Your Knowledge on Legislature</h2>
+    <form id="quizForm">
+        <div class="question">
+            <p>1. Which of the following is NOT a power of the Legislature?</p>
+            <input type="radio" name="q1" value="a"> Enacting laws<br>
+            <input type="radio" name="q1" value="b"> Imposing taxes<br>
+            <input type="radio" name="q1" value="c"> Executing laws<br>
+            <input type="radio" name="q1" value="d"> Amending the Constitution<br>
+        </div>
+
+        <div class="question">
+            <p>2. In a Parliamentary form of government, the legislature can hold the executive accountable through which of the following mechanisms?</p>
+            <input type="radio" name="q2" value="a"> Presidential Veto<br>
+            <input type="radio" name="q2" value="b"> Judicial Review<br>
+            <input type="radio" name="q2" value="c"> Vote of No Confidence<br>
+            <input type="radio" name="q2" value="d"> Impeachment of Judges<br>
+        </div>
+
+        <div class="question">
+            <p>3. The bicameral structure of a legislature refers to a system with:</p>
+            <input type="radio" name="q3" value="a"> Two houses, where one is elected and the other is appointed<br>
+            <input type="radio" name="q3" value="b"> Two houses of equal powers<br>
+            <input type="radio" name="q3" value="c"> Two houses where one is national and the other is regional<br>
+            <input type="radio" name="q3" value="d"> Two houses, usually referred to as Upper House and Lower House<br>
+        </div>
+
+        <div class="question">
+            <p>4. Which of the following parliamentary committees has members from both the Lok Sabha and Rajya Sabha?</p>
+            <input type="radio" name="q4" value="a"> Estimates Committee<br>
+            <input type="radio" name="q4" value="b"> Public Accounts Committee<br>
+            <input type="radio" name="q4" value="c"> Committee on Public Undertakings<br>
+            <input type="radio" name="q4" value="d"> Rules Committee<br>
+        </div>
+
+        <div class="question">
+            <p>5. Under Article 368 of the Indian Constitution, which type of bills must be passed by a special majority of the Parliament?</p>
+            <input type="radio" name="q5" value="a"> Money Bill<br>
+            <input type="radio" name="q5" value="b"> Ordinary Bill<br>
+            <input type="radio" name="q5" value="c"> Constitutional Amendment Bill<br>
+            <input type="radio" name="q5" value="d"> Appropriation Bill<br>
+        </div>
+
+        <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+    </form>
+
+    <div id="result" class="result"></div>
+</div>
+
+<script>
+    function submitQuiz() {
+        var score = 0;
+        
+        var answers = {
+            q1: "c",
+        q2: "c",
+        q3: "d",
+        q4: "b",
+        q5: "c"
+        };
+
+        for (var question in answers) {
+            var radios = document.getElementsByName(question);
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked && radios[i].value === answers[question]) {
+                    score++;
+                    break;
+                }
+            }
+        }
+
+        var resultDiv = document.getElementById('result');
+        var reward = "";
+        if (score === 5) {
+            reward = "🏆 You're a Quiz Master! Congratulations!";
+        } else if (score >= 3) {
+            reward = "🎉 Good job! Keep learning.";
+        } else {
+            reward = "😕 Better luck next time. Try again!";
+        }
+
+        resultDiv.innerHTML = "You scored " + score + " out of 5.<br>" + "<span class='reward'>" + reward + "</span>";
+    }
+</script>
+
+</body>
+</html>

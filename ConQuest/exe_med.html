@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz with Reward</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        .reward {
+            font-size: 22px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Quiz: Test Your Knowledge on Executive</h2>
+    <form id="quizForm">
+        <div class="question">
+            <p>1. Who among the following appoints the Prime Minister of India?</p>
+            <input type="radio" name="q1" value="a"> Speaker of the Lok Sabha<br>
+            <input type="radio" name="q1" value="b"> President of India<br>
+            <input type="radio" name="q1" value="c"> Chief Justice of India<br>
+            <input type="radio" name="q1" value="d"> Vice President of India<br>
+        </div>
+
+        <div class="question">
+            <p>2. The Council of Ministers, including the Prime Minister, is collectively responsible to which body?</p>
+            <input type="radio" name="q2" value="a"> President<br>
+            <input type="radio" name="q2" value="b"> Lok Sabha<br>
+            <input type="radio" name="q2" value="c"> Rajya Sabha<br>
+            <input type="radio" name="q2" value="d"> Judiciary<br>
+        </div>
+
+        <div class="question">
+            <p>3. What is the minimum age required to be eligible for the office of the President of India?</p>
+            <input type="radio" name="q3" value="a"> 25 years<br>
+            <input type="radio" name="q3" value="b"> 30 years<br>
+            <input type="radio" name="q3" value="c"> 35 years<br>
+            <input type="radio" name="q3" value="d"> 40 years<br>
+        </div>
+
+        <div class="question">
+            <p>4. Under Article 75 of the Indian Constitution, the Ministers hold office during the pleasure of:</p>
+            <input type="radio" name="q4" value="a"> Prime Minister<br>
+            <input type="radio" name="q4" value="b"> Parliament<br>
+            <input type="radio" name="q4" value="c"> Lok Sabha<br>
+            <input type="radio" name="q4" value="d"> President<br>
+        </div>
+
+        <div class="question">
+            <p>5. Which of the following statements about the Indian President is NOT correct?</p>
+            <input type="radio" name="q5" value="a"> The President can return a money bill for reconsideration by the Parliament.<br>
+            <input type="radio" name="q5" value="b"> The President is the Supreme Commander of the Armed Forces.<br>
+            <input type="radio" name="q5" value="c"> The President can declare an emergency under Article 352.<br>
+            <input type="radio" name="q5" value="d"> The President can appoint the Governors of States.<br>
+        </div>
+
+        <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+    </form>
+
+    <div id="result" class="result"></div>
+</div>
+
+<script>
+    function submitQuiz() {
+        var score = 0;
+        
+        var answers = {
+             q1: "b",
+                q2: "b",
+        q3: "c",
+        q4: "d",
+        q5: "a"
+        };
+
+        for (var question in answers) {
+            var radios = document.getElementsByName(question);
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked && radios[i].value === answers[question]) {
+                    score++;
+                    break;
+                }
+            }
+        }
+
+        var resultDiv = document.getElementById('result');
+        var reward = "";
+        if (score === 5) {
+            reward = "🏆 You're a Quiz Master! Congratulations!";
+        } else if (score >= 3) {
+            reward = "🎉 Good job! Keep learning.";
+        } else {
+            reward = "😕 Better luck next time. Try again!";
+        }
+
+        resultDiv.innerHTML = "You scored " + score + " out of 5.<br>" + "<span class='reward'>" + reward + "</span>";
+    }
+</script>
+
+</body>
+</html>
